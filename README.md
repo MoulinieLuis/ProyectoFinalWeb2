@@ -3,6 +3,6 @@
 
 
 Integrantes del equipo
-- Paola
-- Eduardo
+- Tovar Paola
+- Rodriguez Chavez Ricardo
 - Moulinie Ruíz Luis Enrique
