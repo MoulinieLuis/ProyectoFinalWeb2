@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Mada:wght@300&family=Noto+Sans+Symbols+2&family=Quicksand&family=Roboto+Flex:opsz,wght@8..144,200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mada', sans-serif;
+}
+
+.bg-general{
+    background-color: rgb(210, 210, 210);
+}
