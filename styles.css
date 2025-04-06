@@ -1,44 +1,119 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    font-family: "Arial", sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
+/* Hero Section */
+.hero {
+    padding: 3rem 1.5rem;
+}
+
+/* Botones personalizados */
+.button {
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.button.is-warning {
+    background-color: #ffdd57;
+    border-color: #e6c200;
+    color: #222;
+}
+
+.button.is-warning:hover {
+    background-color: #e6c200;
+    border-color: #c7a500;
+}
+
+/* ====== Estilos del Registro ====== */
 .container {
     background: white;
-    padding: 60px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    width: 300px;
-    text-align: left;
+    padding: 3rem;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    margin-top: 5rem;
 }
 
-input {
+.container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.container input {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #707070;
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
-button {
-    background: #286928;
-    color: white;
-    border: none;
-    padding: 15px;
-    margin: 10px auto; /* Center the button */
+.container button {
+    background: #ffdd57;
+    color: #222;
+    border: 2px solid #e6c200;
+    padding: 12px;
+    width: 100%;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
 }
 
-button:hover {
-    background: #4cae4c;
+.container button:hover {
+    background: #e6c200;
+    border-color: #c7a500;
 }
 
-.link {
+.container .link {
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.container .link:hover {
+    text-decoration: underline;
+}
+
+
+/* Sección de Impacto */
+.impacto .box {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.impacto .box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonios */
+.testimonials .box {
+    background: #ffffff;
+    border-left: 5px solid #ffdd57;
+    padding: 1.5rem;
+    font-style: italic;
+}
+
+.testimonials strong {
     display: block;
-    margin-top: 10px;
+    margin-top: 0.5rem;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 1.5rem;
+}
+
+.footer .content {
+    font-size: 0.9rem;
 }

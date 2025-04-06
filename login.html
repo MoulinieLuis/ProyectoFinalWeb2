@@ -6,7 +6,47 @@
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+</head><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
+<body class="has-background-light">
+    <div class="container login-container">
+        <div class="box">
+            <h2 class="title is-3 has-text-centered">Iniciar Sesión</h2>
+            <form>
+                <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Usuario" required>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Contraseña" required>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" class="button is-warning is-fullwidth">Ingresar</button>
+            </form>
+            <p class="has-text-centered mt-3">
+                <a href="registro.html" class="has-text-link">¿No tienes cuenta? Regístrate aquí</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
 <body>
     <div class="container">
         <h2>Iniciar Sesión</h2>
