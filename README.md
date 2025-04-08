@@ -6,3 +6,4 @@ Integrantes del equipo
 - Tovar Paola
 - Rodriguez Chavez Ricardo
 - Moulinie Ruíz Luis Enrique
+- Mariscal Vargas Pamela Montserrat
