@@ -7,6 +7,9 @@ body {
     color: #333;
 }
 
+
+
+
 /* Hero Section */
 .hero {
     padding: 3rem 1.5rem;
@@ -101,6 +104,65 @@ body {
     padding: 1.5rem;
     font-style: italic;
 }
+
+.button.is-primary {
+    background-color: #ad25cf; 
+    color: white;
+    border: none;
+  }
+
+
+  .button.is-primary:hover{
+    background-color: #6d1683; 
+    color: white;
+    border: none;
+  }  
+
+
+ .button.is-light {
+    background-color: #333333;
+    color: white;
+    border: none;
+  }
+
+
+
+  .logoTamaño{
+    width: 300px;
+    height: 100px;
+  }
+
+  .btn-consultar {
+    background-color: #905acd; 
+    color: white;
+    border: none;
+  }
+
+  .btn-actualizar {
+    background-color: #ffa500; 
+    color: white;
+    border: none;
+  }
+
+  .btn-eliminar {
+    background-color: #dc143c; 
+    color: white;
+    border: none;
+  }
+
+  .btn-consultar:hover {
+    background-color: #631074;
+  }
+
+  .btn-actualizar:hover {
+    background-color: #ff8c00;
+  }
+
+  .btn-eliminar:hover {
+    background-color: #b22222;
+  }
+
+
 
 .testimonials strong {
     display: block;
