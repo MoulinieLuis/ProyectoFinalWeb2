@@ -7,3 +7,4 @@ Integrantes del equipo
 - Rodriguez Chavez Ricardo
 - Moulinie Ruíz Luis Enrique
 - Mariscal Vargas Pamela Montserrat
+- Chávez Bolaños Gustavo
