@@ -1,0 +1,27 @@
+.homepage-hero {
+  width: 100%;
+  min-height: calc(100vh - var(--bs-navbar-height, 56px));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('/fondoHome.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #e0e0e0;
+}
+
+.homepage-hero h1 {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+}
+
+.homepage-hero .lead {
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+  font-style: italic;
+}

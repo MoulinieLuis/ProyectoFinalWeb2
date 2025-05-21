@@ -1,0 +1,43 @@
+.card {
+  border: 1px solid #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-control {
+  background-color: #222 !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #555 !important;
+}
+
+.form-control::placeholder {
+  color: #888;
+}
+
+.form-label {
+  color: #bbbbbb;
+}
+
+.btn-primary {
+  background-color: #500000;
+  border-color: #700000;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #700000;
+  border-color: #900000;
+}
+
+.card-body a {
+  color: #a0a0a0;
+  text-decoration: none;
+}
+
+.card-body a:hover {
+  color: #cccccc;
+  text-decoration: underline;
+}
+
+.text-danger {
+  color: #ff6666 !important;
+}
