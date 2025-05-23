@@ -1,33 +1,48 @@
+
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { login } from '../services/api'; 
 import '../src/styles/FormStyles.css';
 
 function LoginPage() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState(''); 
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // --- CONSOLE.LOGS TEMPORALES PARA DEPURACIÓN ---
+    console.log("Datos a enviar para login:");
+    console.log("Username:", username);
+    console.log("Password:", password);
+
+
     setLoading(true);
     setError(null);
-
-    console.log('Intentando iniciar sesión con:', { email, password });
+    setSuccess(false);
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
 
-      if (email === 'test@test.com' && password === 'password') {
-        console.log('Login exitoso (simulado)');
-      } else {
-        setError('Usuario o contraseña incorrectos (simulado)');
-      }
+      const loginData = await login(username, password); 
+      console.log('Inicio de sesión exitoso:', loginData);
+
+      setSuccess(true);
+      setUsername(''); 
+      setPassword(''); 
+
+
+      setTimeout(() => {
+        navigate('/products'); 
+      }, 1500);
+
     } catch (err) {
-      setError('Ocurrió un error durante el login (simulado)');
-      console.error('Error de login:', err);
+      console.error('Error durante el login:', err);
+      setError(err.message || 'Ocurrió un error inesperado durante el inicio de sesión.');
     } finally {
       setLoading(false);
     }
@@ -39,22 +54,25 @@ function LoginPage() {
         <Col xs={12} md={6}>
           <Card bg="dark" text="light">
             <Card.Body>
-              <Card.Title className="text-center">🦇Iniciar Sesión</Card.Title>
+              <Card.Title className="text-center">¡Bienvenido de nuevo! 🦇</Card.Title>
+
               <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>💀 Correo Electrónico</Form.Label>
+                {/* Campo de Nombre de Usuario */}
+                <Form.Group className="mb-3" controlId="formBasicUsernameLogin">
+                  <Form.Label>💀 Nombre de Usuario</Form.Label>
                   <Form.Control
-                    type="email"
-                    placeholder="Ingresa tu email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    type="text"
+                    placeholder="Ingresa tu nombre de usuario"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
                     bg="secondary"
                     text="light"
                   />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                {/* Campo de Contraseña */}
+                <Form.Group className="mb-3" controlId="formBasicPasswordLogin">
                   <Form.Label>💀 Contraseña</Form.Label>
                   <Form.Control
                     type="password"
@@ -67,10 +85,15 @@ function LoginPage() {
                   />
                 </Form.Group>
 
+
                 {error && <p className="text-danger">{error}</p>}
 
+
+                {success && <p className="text-success">¡Inicio de sesión exitoso! Redirigiendo...</p>}
+
+
                 <Button variant="primary" type="submit" disabled={loading}>
-                  {loading ? 'Iniciando...' : 'Login'}
+                  {loading ? 'Iniciando Sesión...' : 'Iniciar Sesión'}
                 </Button>
 
                 <div className="mt-3 text-center">

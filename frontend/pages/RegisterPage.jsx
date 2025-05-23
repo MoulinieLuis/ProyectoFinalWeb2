@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; 
+import { register } from '../services/api'; 
 import '../src/styles/FormStyles.css';
 
 function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [username, setUsername] = useState(''); 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,24 +22,34 @@ function RegisterPage() {
       return;
     }
 
+    // --- CONSOLE.LOGS TEMPORALES PARA DEPURACIÓN ---
+    console.log("Datos a enviar para registro:");
+    console.log("Username:", username);
+    console.log("Email:", email);
+    console.log("Password:", password);
+    console.log("Confirm Password:", confirmPassword);
+
     setLoading(true);
     setError(null);
     setSuccess(false);
 
-    console.log('Intentando registrar usuario con:', { email, password });
-
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
 
-      console.log('Registro exitoso (simulado)');
+      const registrationData = await register(username, email, password); 
+      console.log('Registro exitoso:', registrationData);
+
       setSuccess(true);
       setEmail('');
       setPassword('');
       setConfirmPassword('');
+      setUsername(''); 
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000); 
 
     } catch (err) {
-      setError('Ocurrió un error durante el registro (simulado)');
-      console.error('Error de registro:', err);
+      console.error('Error durante el registro:', err);
+      setError(err.message || 'Ocurrió un error inesperado durante el registro.');
     } finally {
       setLoading(false);
     }
@@ -51,6 +64,21 @@ function RegisterPage() {
               <Card.Title className="text-center">🦇Registrarse</Card.Title>
 
               <Form onSubmit={handleSubmit}>
+                {/* Campo de Nombre de Usuario */}
+                <Form.Group className="mb-3" controlId="formBasicUsernameRegister">
+                  <Form.Label>💀 Nombre de Usuario</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Ingresa tu nombre de usuario"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required 
+                    bg="secondary"
+                    text="light"
+                  />
+                </Form.Group>
+
+                {/* Campo de Email */}
                 <Form.Group className="mb-3" controlId="formBasicEmailRegister">
                   <Form.Label>💀 Correo Electrónico</Form.Label>
                   <Form.Control
@@ -64,6 +92,7 @@ function RegisterPage() {
                   />
                 </Form.Group>
 
+                {/* Campo de Contraseña */}
                 <Form.Group className="mb-3" controlId="formBasicPasswordRegister">
                   <Form.Label>💀 Contraseña</Form.Label>
                   <Form.Control
@@ -77,6 +106,7 @@ function RegisterPage() {
                   />
                 </Form.Group>
 
+                {/* Campo de Confirmar Contraseña */}
                 <Form.Group className="mb-3" controlId="formBasicConfirmPasswordRegister">
                   <Form.Label>💀 Confirmar Contraseña</Form.Label>
                   <Form.Control
@@ -92,7 +122,8 @@ function RegisterPage() {
 
                 {error && <p className="text-danger">{error}</p>}
 
-                {success && <p className="text-success">¡Registro exitoso! Ahora puedes <Link to="/login">iniciar sesión</Link>.</p>}
+                {success && <p className="text-success">¡Registro exitoso! Redirigiendo para iniciar sesión...</p>}
+
 
                 <Button variant="primary" type="submit" disabled={loading}>
                   {loading ? 'Registrando...' : 'Registrarse'}
@@ -101,6 +132,7 @@ function RegisterPage() {
                 <div className="mt-3 text-center">
                   ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>
                 </div>
+
               </Form>
             </Card.Body>
           </Card>

@@ -7,14 +7,8 @@ function AppNavbar() {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
-          <img
-            src="/logo.png"
-            width="30"
-            height="30"
-            className="d-inline-block align-top me-2"
-            alt="Alter Clothes Logo"
+          <img src="../public/logo_01.svg" width="100" height="100" className="d-inline-block align-top me-2" alt="Alter Clothes Logo"
           />
-          ALTER CLOTHES
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,7 +17,7 @@ function AppNavbar() {
             <Nav.Link as={NavLink} to="/" end>
               Inicio
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/catalog">
+            <Nav.Link as={NavLink} to="/products">
               Catálogo
             </Nav.Link>
           </Nav>

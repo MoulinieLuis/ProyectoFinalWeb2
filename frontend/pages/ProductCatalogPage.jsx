@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { getProducts } from '../services/api';
+import { getProducts } from '../services/api'
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; 
+
 
 function ProductCatalogPage() {
   const [products, setProducts] = useState([]);
@@ -58,8 +60,8 @@ function ProductCatalogPage() {
                 <Card.Text>
                   Precio: ${product.price ? product.price.toFixed(2) : 'N/A'}
                 </Card.Text>
-                <Button variant="outline-light" onClick={() => console.log('Agregar', product.id)}>
-                  Agregar al Carrito
+                <Button variant="outline-light" as={Link} to={`/products/${product.id}`}>
+                  Ver Detalles
                 </Button>
               </Card.Body>
             </Card>

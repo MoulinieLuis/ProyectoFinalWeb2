@@ -42,7 +42,7 @@ function HomePage() {
         <Container>
           <Row className="justify-content-md-center">
             <Col md={8}>
-              <h2 className="text-center mb-4">Sobre Nosotros</h2>
+              <h2 className="text-center mb-4">🦇Sobre Nosotros</h2>
               <p>
                 dvdf
               </p>
@@ -56,7 +56,7 @@ function HomePage() {
 
       <section className="py-5">
         <Container>
-           <h2 className="text-center mb-4">Nuevos productos</h2>
+           <h2 className="text-center mb-4">🦇Nuevos productos</h2>
 
            {isLoadingFeatured && <p className="text-center">Cargando productos destacados...</p>}
            {errorFeatured && <p className="text-center text-danger">Error al cargar destacados: {errorFeatured.message}</p>}
@@ -84,7 +84,7 @@ function HomePage() {
                      <Card.Text>
                        Precio: ${product.price ? product.price.toFixed(2) : 'N/A'}
                      </Card.Text>
-                     <Button variant="outline-light" as={Link} to={`/catalog?id=${product.id}`}>
+                     <Button variant="outline-light" as={Link} to={`/products/${product.id}`}>
                        Ver Producto
                      </Button>
                    </Card.Body>
