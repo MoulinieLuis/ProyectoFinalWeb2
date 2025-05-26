@@ -21,12 +21,9 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
 
-          {/* CAMBIO CRÍTICO: La ruta para el catálogo de productos ahora es /products */}
-          {/* El login te redirige a /products, así que esta ruta debe existir y ser /products */}
           <Route path="/products" element={<ProductCatalogPage />} />
 
-          {/* CAMBIO: La ruta para el detalle de un producto ahora es /products/:id */}
-          {/* Es más consistente tener una ruta base común para productos */}
+
           <Route path="/products/:id" element={<ProductDetailPage />} />
 
           {/* Ruta para manejar cualquier URL que no coincida (404) */}
