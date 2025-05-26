@@ -1,8 +1,5 @@
-// frontend/src/services/api.js
-
 const API_BASE_URL = 'http://localhost:5182/api'; 
 
-// Función para obtener productos
 export async function getProducts() {
   try {
     const response = await fetch(`${API_BASE_URL}/products`);
@@ -17,7 +14,6 @@ export async function getProducts() {
     throw error;
   }
 }
-
 
 export async function getProductById(id) {
   try {
@@ -37,7 +33,6 @@ export async function getProductById(id) {
   }
 }
 
-// Función para iniciar sesión
 export async function login(username, password) { 
   try {
     const response = await fetch(`${API_BASE_URL}/account/login`, {
@@ -45,7 +40,6 @@ export async function login(username, password) {
       headers: {
         'Content-Type': 'application/json',
       },
-
       body: JSON.stringify({ UserName: username, Password: password }),
     });
 
@@ -62,19 +56,19 @@ export async function login(username, password) {
   }
 }
 
-// Función para registrar un usuario
-export async function register(username, email, password) {
+export async function register(username, email, password, confirmPassword) {
   try {
-    const response = await await fetch(`${API_BASE_URL}/account/register`, {
+    const response = await fetch(`${API_BASE_URL}/account/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ Username: username, Email: email, Password: password }),
+      body: JSON.stringify({ Username: username, Email: email, Password: password, ConfirmPassword: confirmPassword }),
     });
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({ message: 'Error al registrar el usuario.' }));
+      console.error("Detalles del error del backend:", errorData); 
       throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
     }
 
