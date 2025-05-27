@@ -32,9 +32,9 @@ function AppNavbar() {
               Iniciar Sesión
             </Button>
             <Button
-              variant="primary"
               as={Link}
               to="/register"
+              className="btn-custom-purple" 
             >
               Registrarse
             </Button>
