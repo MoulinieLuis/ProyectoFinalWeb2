@@ -1,8 +1,20 @@
+/* frontend/src/App.css */
+
+/* Estas reglas ya deberían estar en index.css, por lo que las he comentado aquí para evitar duplicidad.
+   Si por alguna razón no usas index.css o quieres que App.css las defina, descomenta. */
+/*
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #212121;
+  color: #c0c0c0;
+}
+*/
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0; 
+  text-align: center; 
 }
 
 .logo {
@@ -39,4 +51,24 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.btn-custom-purple {
+  background-color: #D8BFD8 !important;
+  border-color: #D8BFD8 !important;
+  color: #333333 !important;
+}
+
+.btn-custom-purple:hover {
+  background-color: #C1A8C1 !important;
+  border-color: #C1A8C1 !important;
+  color: #333333 !important;
+}
+
+.btn-custom-purple:active,
+.btn-custom-purple:focus {
+  background-color: #C1A8C1 !important;
+  border-color: #C1A8C1 !important;
+  box-shadow: 0 0 0 0.25rem rgba(216, 191, 216, 0.5) !important; 
+  color: #333333 !important; 
 }
