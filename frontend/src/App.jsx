@@ -1,10 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AppNavbar from './components/Navbar'; // Asumiendo que tu Navbar se llama AppNavbar y está en src/components/
-
-// Ajuste de las rutas de importación:
-// Si App.jsx está en 'src/', y tus páginas están en 'src/pages/',
-// entonces la ruta relativa correcta es './pages/NombreDeLaPagina'.
+import AppNavbar from './components/Navbar';
 import ProductCatalogPage from '../pages/ProductCatalogPage';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
@@ -14,7 +10,7 @@ import ProductDetailPage from '../pages/ProductDetailPage';
 function App() {
   return (
     <Router>
-      <AppNavbar /> {/* Tu barra de navegación */}
+      <AppNavbar />
       <main className="container mt-4">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -26,8 +22,6 @@ function App() {
 
           <Route path="/products/:id" element={<ProductDetailPage />} />
 
-          {/* Ruta para manejar cualquier URL que no coincida (404) */}
-          {/* Puedes dejar este elemento JSX simple o importar un componente NotFoundPage más elaborado */}
           <Route path="*" element={<h1>404 - Página No Encontrada</h1>} />
         </Routes>
       </main>
