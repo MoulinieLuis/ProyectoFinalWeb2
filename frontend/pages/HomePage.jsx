@@ -33,7 +33,7 @@ function HomePage() {
         <Container className="text-center text-light">
           <h1>ALTER CLOTHES</h1>
           <p className="lead mb-4">
-            Donde la Sombra Encuentra el Estilo
+            El lado B de la moda 
           </p>
           <Button variant="outline-light" size="lg" as={Link} to="/products">
             Explorar productos!
@@ -60,6 +60,9 @@ function HomePage() {
                   y te hagan sentir increíble. Trabajamos con los mejores materiales y diseños vanguardistas
                   para que siempre encuentres algo especial que resuene con tu lado más auténtico.
                   Explora nuestra colección y déjanos ayudarte a expresar tu estilo sin límites.
+
+                  Somos más que una tienda de ropa: somos una forma de expresión. Vestir diferente es una declaración de identidad, libertad y autenticidad. Nos inspiramos en la música, el arte, la calle y el espíritu rebelde de quienes se atreven a ser ellos mismos. Aquí encontrarás piezas únicas seleccionadas con actitud: desde lo gótico y lo grunge, hasta lo dark, punk y urbano. Ropa que no sigue modas… las desafía.
+
                 </p>
               </div>
             </Col>
