@@ -125,9 +125,9 @@ function RegisterPage() {
                 {success && <p className="text-success">¡Registro exitoso! Redirigiendo para iniciar sesión...</p>}
 
 
-                <Button variant="primary" type="submit" disabled={loading}>
-                  {loading ? 'Registrando...' : 'Registrarse'}
-                </Button>
+                    <Button type="submit" disabled={loading} className="btn-custom-purple">
+                      {loading ? 'Registrando...' : 'Registrarse'}
+                    </Button>
 
                 <div className="mt-3 text-center">
                   ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>

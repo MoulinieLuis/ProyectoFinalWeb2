@@ -92,7 +92,7 @@ function LoginPage() {
                 {success && <p className="text-success">¡Inicio de sesión exitoso! Redirigiendo...</p>}
 
 
-                <Button variant="primary" type="submit" disabled={loading}>
+                <Button type="submit" disabled={loading} className="btn-custom-purple">
                   {loading ? 'Iniciando Sesión...' : 'Iniciar Sesión'}
                 </Button>
 
